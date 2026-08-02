@@ -233,7 +233,7 @@ nav {
 
 .swiper-slide {
     width: 340px;
-    height: 500px;
+    height: 520px;
 }
 
 .glass-card {
@@ -252,10 +252,10 @@ nav {
 
 .card-icon {
     width: 100%;
-    height: 160px;
+    height: 140px;
     border-radius: 16px;
     background: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(255,255,255,0.1));
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -264,32 +264,61 @@ nav {
 }
 
 .card-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .card-desc {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #4a4e69;
-    margin-bottom: auto;
+    margin-bottom: 10px;
 }
 
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 15px;
+    gap: 6px;
+    margin-top: auto;
+    margin-bottom: 12px;
 }
 
 .tech-tag {
     background: rgba(255, 255, 255, 0.5);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
-    padding: 5px 12px;
+    padding: 4px 10px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.8);
 }
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.card-btn {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 8px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2b2d42;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+    .card-btn:hover {
+        background: #ffffff;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
+    }
 
 /* ================= İLETİŞİM FORMU & FOOTER ================= */
 .contact-container {
@@ -403,6 +432,6 @@ footer {
 
     .swiper-slide {
         width: 300px;
-        height: 480px;
+        height: 500px;
     }
 }
