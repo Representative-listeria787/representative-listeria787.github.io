@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammet Ali Oruç | Yazılım Geliştirici Portfolyosu</title>
+
+    <!-- Google Fonts & İkonlar & Swiper CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- HARİCİ CSS DOSYAMIZ -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+
+    <nav>
+        <a href="#" class="logo">M. Ali Oruç</a>
+        <div class="nav-links">
+            <a href="#yetenekler" data-i18n="nav_skills">Yetenekler</a>
+            <a href="#projeler" data-i18n="nav_projects">Projeler</a>
+            <a href="#iletisim" data-i18n="nav_contact">İletişim</a>
+            <button id="langToggle" class="lang-btn">EN</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 class="reveal">Muhammet Ali Oruç</h1>
+        <div class="typewriter-container reveal">
+            <span id="typewriter"></span><span class="cursor">|</span>
+        </div>
+        <a href="#projeler" class="hero-btn reveal"><span data-i18n="hero_btn">Projeleri İncele</span> <i class="fa-solid fa-arrow-down ms-2"></i></a>
+    </header>
+
+    <section id="yetenekler" class="section-padding">
+        <h2 class="section-title reveal" data-i18n="skills_title">Teknik Yetenekler</h2>
+        <div class="skills-grid reveal">
+            <div class="skill-tag"><i class="fa-brands fa-microsoft"></i> C# & C++</div>
+            <div class="skill-tag"><i class="fa-solid fa-mobile-screen"></i> .NET MAUI</div>
+            <div class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5 & CSS3</div>
+            <div class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</div>
+            <div class="skill-tag"><i class="fa-brands fa-angular"></i> AngularJS</div>
+            <div class="skill-tag"><i class="fa-solid fa-database"></i> MySQL</div>
+            <div class="skill-tag"><i class="fa-solid fa-cube"></i> Blender 3D</div>
+            <div class="skill-tag"><i class="fa-solid fa-gamepad"></i> Unreal Engine 5</div>
+            <div class="skill-tag"><i class="fa-brands fa-google-play"></i> Play Console</div>
+            <div class="skill-tag"><i class="fa-solid fa-robot"></i> <span data-i18n="skill_ai">AI Destekli Geliştirme</span></div>
+        </div>
+    </section>
+
+    <section id="projeler" class="section-padding">
+        <h2 class="section-title reveal" data-i18n="projects_title">Öne Çıkan Çalışmalar</h2>
+        <div class="swiper mySwiper reveal">
+            <div class="swiper-wrapper" id="proje-kapsayici">
+                <!-- Projeler JavaScript tarafından dinamik eklenecek -->
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <footer id="iletisim" style="margin-top: 50px;">
+        <div class="section-padding" style="padding-bottom: 20px;">
+            <h2 class="section-title reveal" data-i18n="contact_title" style="margin-bottom: 10px;">İletişime Geçin</h2>
+            <p class="reveal" data-i18n="contact_desc" style="color: #4a4e69; text-align: center; margin-bottom: 40px;">Yeni projelere ve profesyonel fırsatlara her zaman açığım.</p>
+
+            <div class="contact-container reveal">
+                <!-- FORMSPREE BAĞLANTISI (action kısmını kendi formspree linkinle güncelle) -->
+                <form action="https://formspree.io/f/SENIN_KODUN" method="POST" class="glass-form">
+                    <div class="input-group">
+                        <input type="text" name="İsim" data-i18n-placeholder="form_name" placeholder="Adınız Soyadınız" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="Email" data-i18n-placeholder="form_email" placeholder="E-posta Adresiniz" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea name="Mesaj" rows="5" data-i18n-placeholder="form_message" placeholder="Mesajınız..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn"><span data-i18n="form_submit">Gönder</span> <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+
+                <div class="social-links">
+                    <a href="mailto:ornek@mail.com" class="social-link"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://github.com/ornek-profil" target="_blank" class="social-link"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/ornek-profil" target="_blank" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-text reveal" data-i18n="footer_text" style="padding-bottom: 30px;">© 2026 Muhammet Ali Oruç. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- Swiper Kütüphanesi -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- HARİCİ JAVASCRIPT DOSYAMIZ -->
+    <script src="script.js"></script>
+</body>
+</html>
