@@ -7,6 +7,7 @@ const translations = {
         contact_desc: "Yeni projelere ve profesyonel fırsatlara her zaman açığım.",
         form_name: "Adınız Soyadınız", form_email: "E-posta Adresiniz", form_message: "Mesajınız...", form_submit: "Gönder",
         footer_text: "© 2026 Muhammet Ali Oruç. Tüm hakları saklıdır.",
+        btn_download: "İndir", btn_view3d: "3D İncele",
         typewriter: ["Bağımsız Yazılım Geliştirici", "Web, Masaüstü & Mobil Teknolojileri", "3D Modelleme & Oyun Geliştirme", "Yeni Mezun & Teknolojist"]
     },
     en: {
@@ -16,6 +17,7 @@ const translations = {
         contact_desc: "I am always open to new projects and professional opportunities.",
         form_name: "Full Name", form_email: "Email Address", form_message: "Your Message...", form_submit: "Send",
         footer_text: "© 2026 Muhammet Ali Oruç. All rights reserved.",
+        btn_download: "Download", btn_view3d: "View 3D",
         typewriter: ["Independent Software Developer", "Web, Desktop & Mobile Tech", "3D Modeling & Game Dev", "New Graduate & Technologist"]
     }
 };
@@ -28,7 +30,8 @@ const projelerData = [
         aciklama: {
             tr: "Takım çalışması ile geliştirilen, müşteri kayıtları ve oda yönetimi operasyonlarını barındıran kapsamlı otomasyon projesi.",
             en: "A comprehensive automation project developed as a team, featuring customer records and room management."
-        }
+        },
+        indirmeLink: "#" // Buraya projenin .zip linkini ekleyebilirsin
     },
     {
         ikon: "fa-utensils", etiketler: [".NET MAUI", "C#"],
@@ -36,7 +39,8 @@ const projelerData = [
         aciklama: {
             tr: "Aktif iş sahasında, masalardan daha hızlı sipariş alabilmek ve masa durumlarını takip etmek için geliştirilmiş mobil uygulama.",
             en: "A mobile app developed to speed up order taking and track table status in an active workspace."
-        }
+        },
+        indirmeLink: "#"
     },
     {
         ikon: "fa-newspaper", etiketler: ["AngularJS", "JavaScript", "HTML/CSS"],
@@ -44,7 +48,8 @@ const projelerData = [
         aciklama: {
             tr: "Öğrencilerin güncel içeriklere erişmesi için takım çalışması ile geliştirilmiş dinamik ve responsive web projesi.",
             en: "A dynamic and responsive web project developed as a team to give students access to current content."
-        }
+        },
+        indirmeLink: "#"
     },
     {
         ikon: "fa-list-check", etiketler: ["C++", "Windows Forms"],
@@ -52,7 +57,8 @@ const projelerData = [
         aciklama: {
             tr: "GDI+ görsel arayüzü ile donatılmış, renk kodlu öncelik algoritmaları ve CSV dışa aktarımı barındıran masaüstü aracı.",
             en: "A desktop tool equipped with a GDI+ visual interface, color-coded priority algorithms, and CSV export."
-        }
+        },
+        indirmeLink: "#"
     },
     {
         ikon: "fa-unity", etiketler: ["Unreal Engine 5", "Blender 3D", "Unity"],
@@ -60,7 +66,8 @@ const projelerData = [
         aciklama: {
             tr: "Claude AI entegrasyonu (MCP) ile desteklenen, prosedürel içerik (PCG) ve blueprint oyun mekaniği tasarımları.",
             en: "Procedural content (PCG) and blueprint game mechanics supported by Claude AI integration (MCP)."
-        }
+        },
+        ozelSayfa: "3d-viewer.html" // 3D projeye tıklandığında açılacak sayfa
     }
 ];
 
@@ -73,6 +80,12 @@ function renderProjects(lang) {
 
     projelerData.forEach(proje => {
         let etiketHTML = proje.etiketler.map(e => `<span class="tech-tag">${e}</span>`).join('');
+
+        // Eğer 3D proje ise "3D İncele" butonu, diğerleri ise "İndir" butonu koyalım
+        let aksiyonButonu = proje.ozelSayfa
+            ? `<a href="${proje.ozelSayfa}" class="card-btn"><i class="fa-solid fa-cube"></i> ${translations[lang].btn_view3d}</a>`
+            : `<a href="${proje.indirmeLink}" class="card-btn" download><i class="fa-solid fa-download"></i> ${translations[lang].btn_download}</a>`;
+
         projeKapsayici.innerHTML += `
             <div class="swiper-slide">
                 <div class="glass-card">
@@ -80,6 +93,7 @@ function renderProjects(lang) {
                     <h3 class="card-title">${proje.baslik[lang]}</h3>
                     <p class="card-desc">${proje.aciklama[lang]}</p>
                     <div class="tech-tags">${etiketHTML}</div>
+                    <div class="card-actions">${aksiyonButonu}</div>
                 </div>
             </div>`;
     });
